@@ -1,3 +1,4 @@
 <div>
-  <img [src]="this.imagePath" alt="foto luchador" (click)="mostrarNombre()">
+  <img [src]="this.imagePath" alt="foto luchador" (click)="mostrarNombre()"
+       (mouseenter)="isHover = true" [ngStyle]="isHover ? estilosImgHover : ''" (mouseleave)="isHover = false">
 </div>

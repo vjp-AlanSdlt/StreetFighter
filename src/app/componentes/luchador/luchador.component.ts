@@ -15,9 +15,17 @@ export class LuchadorComponent implements OnInit {
 
   imagePath: SafeResourceUrl;
 
+  estilosImgHover: any = {
+    'border': '5px solid'
+  }
+
+  isHover: boolean = false;
+
   ngOnInit(): void {
     this.imagePath = this._sanitizer.bypassSecurityTrustResourceUrl(this.luchador.retrato);
+    this.estilosImgHover['border-color'] = this.luchador.colorAsociado;
   }
+
 
   mostrarNombre() {
     alert(this.luchador.nombre);

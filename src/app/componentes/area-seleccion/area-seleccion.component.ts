@@ -3,7 +3,7 @@ import {ILuchador} from "../../interfaces/i-luchador";
 import {CargaLuchadorService} from "../../servicios/carga-luchador.service";
 
 @Component({
-  selector: 'app-area-seleccion',
+  selector: 'app-area-seleccion, [app-area-seleccion]',
   templateUrl: './area-seleccion.component.html',
   styleUrls: ['./area-seleccion.component.css']
 })
