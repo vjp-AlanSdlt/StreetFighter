@@ -1,6 +1,6 @@
-.mainContainer {
+.principal {
   display: flex;
-  background-color: mediumpurple;
+  background-color: rgba(147, 112, 219, 0.7);
   border: 5px solid rebeccapurple;
   border-radius: 5px;
   padding: 25px;
