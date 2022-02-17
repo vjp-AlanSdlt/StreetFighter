@@ -1,2 +1,4 @@
-<img [src]="this.imagePath" alt="foto luchador" (click)="mostrarNombre()"
-       (mouseenter)="isHover = true" [ngStyle]="isHover ? estilosImgHover : ''" (mouseleave)="isHover = false" class="col-6">
+<img [src]="this.imagePath" alt="foto luchador"
+       (mouseenter)="isHover = true" [ngStyle]="isHover || numLuchadorSeleccionado === indiceLuchador ? estilosImgHover : ''"
+     (mouseleave)="quitarBorde()"
+     (click)="actualizarClick()">

@@ -1,1 +1,32 @@
-<app-luchador *ngFor="let luchador of luchadores" [luchador]="luchador"></app-luchador>
+<div class="container-fluid principal p-4 row">
+  <div class="col-4">
+    <div class="row">
+      <app-luchador class="col-6 p-0 border" *ngFor="let luchador of luchadores; let i = index" [luchador]="luchador"
+                    [numLuchadorSeleccionado]="indiceSeleccionado"
+                    [indiceLuchador]="i"
+                    (actualizarLuchadorSeleccionado)="actualizarIndice($event)"
+      >
+
+      </app-luchador>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="row">
+
+      <div class="col-6 text-center">
+        <img *ngIf="indiceSeleccionado != -1"
+             [src]="this._sanitizer.bypassSecurityTrustResourceUrl(luchadores[indiceSeleccionado].animacion)"
+             alt="gif luchador"
+        >
+      </div>
+      <div class="col-6 text-center">
+        <h1 *ngIf="indiceSeleccionado != -1">{{luchadores[indiceSeleccionado].nombre}}</h1>
+        <h2 *ngIf="indiceSeleccionado != -1">Fuerza: {{luchadores[indiceSeleccionado].fuerza}}</h2>
+        <h2 *ngIf="indiceSeleccionado != -1">Destreza: {{luchadores[indiceSeleccionado].destreza}}</h2>
+        <h2 *ngIf="indiceSeleccionado != -1">Vida: {{luchadores[indiceSeleccionado].vida}}</h2>
+      </div>
+
+    </div>
+  </div>
+</div>
+

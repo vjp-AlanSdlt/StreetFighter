@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ILuchador} from "../../interfaces/i-luchador";
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
@@ -10,10 +10,14 @@ import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 export class LuchadorComponent implements OnInit {
 
   @Input() luchador: ILuchador;
+  @Input() indiceLuchador: number;
+  @Input() numLuchadorSeleccionado: number;
+  @Output() actualizarLuchadorSeleccionado = new EventEmitter<number>();
 
   constructor(private _sanitizer: DomSanitizer) { }
 
   imagePath: SafeResourceUrl;
+  gifPath: SafeResourceUrl;
 
   estilosImgHover: any = {
     'border': '5px solid'
@@ -26,9 +30,12 @@ export class LuchadorComponent implements OnInit {
     this.estilosImgHover['border-color'] = this.luchador.colorAsociado;
   }
 
+  quitarBorde() {
+    this.isHover = false;
+  }
 
-  mostrarNombre() {
-    alert(this.luchador.nombre);
+  actualizarClick () {
+    this.actualizarLuchadorSeleccionado.emit(this.indiceLuchador);
   }
 
 }

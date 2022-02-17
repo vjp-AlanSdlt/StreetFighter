@@ -2,3 +2,19 @@ app-luchador {
   background-color: white;
   padding: 0;
 }
+.principal {
+  display: flex;
+  background-color: rgba(147, 112, 219, 0.7);
+  border: 5px solid rebeccapurple;
+  border-radius: 5px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+img {
+  width: 300px;
+  height: 400px;
+}
+h1 {
+  color: #ffd500;
+  text-shadow: 3px 3px black;
+}
