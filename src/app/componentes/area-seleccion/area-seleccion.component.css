@@ -15,6 +15,7 @@ img {
   height: 400px;
 }
 h1 {
-  color: #ffd500;
-  text-shadow: 3px 3px black;
+  text-transform: uppercase;
+  color: #c4c18c;
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }

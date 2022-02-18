@@ -1,0 +1,27 @@
+.c-atributo {
+  position: relative;
+  width: 100%;
+  border: 2px solid #fcffdc;
+  height: 40px;
+  background-color: #292929;
+  border-radius: 2px;
+  background-image: linear-gradient(90deg, #ab1009 0%, #d2cf38 51%, #56bc12 75%);
+  overflow: hidden;
+}
+.atributo {
+  width: 25%;
+  background-image: linear-gradient(0deg, #343a37 0%, #696b6c 51%, #072831 75%);
+  height: 100%;
+  border-left: 1px solid black;
+  float: right;
+  transition: all 0.4s;
+}
+h5 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 4px auto 0 auto;
+  width: 100px;
+  text-align: center;
+  color: honeydew;
+}

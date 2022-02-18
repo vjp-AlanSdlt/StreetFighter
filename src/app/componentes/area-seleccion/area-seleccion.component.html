@@ -21,9 +21,20 @@
       </div>
       <div class="col-6 text-center">
         <h1 *ngIf="indiceSeleccionado != -1">{{luchadores[indiceSeleccionado].nombre}}</h1>
-        <h2 *ngIf="indiceSeleccionado != -1">Fuerza: {{luchadores[indiceSeleccionado].fuerza}}</h2>
-        <h2 *ngIf="indiceSeleccionado != -1">Destreza: {{luchadores[indiceSeleccionado].destreza}}</h2>
-        <h2 *ngIf="indiceSeleccionado != -1">Vida: {{luchadores[indiceSeleccionado].vida}}</h2>
+        <app-atributos-luchador
+          *ngIf="indiceSeleccionado != -1"
+          [nombreAtributo]="'Fuerza'" [valorAtributo]="luchadores[indiceSeleccionado].fuerza"
+        ></app-atributos-luchador>
+
+        <app-atributos-luchador
+          *ngIf="indiceSeleccionado != -1"
+          [nombreAtributo]="'Destreza'" [valorAtributo]="luchadores[indiceSeleccionado].destreza"
+        ></app-atributos-luchador>
+
+        <app-atributos-luchador
+          *ngIf="indiceSeleccionado != -1"
+          [nombreAtributo]="'Vida'" [valorAtributo]="luchadores[indiceSeleccionado].vida"
+        ></app-atributos-luchador>
       </div>
 
     </div>
