@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ILuchador} from "../../interfaces/i-luchador";
 import {CargaLuchadorService} from "../../servicios/carga-luchador.service";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -15,6 +15,27 @@ export class AreaSeleccionComponent implements OnInit {
   ngOnInit(): void {
     this.luchadores = this.cargaLuchador.getLuchadores();
   }
+
+  @HostListener('window:keydown', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'ArrowDown':
+        this.indiceSeleccionado += 2;
+        break;
+      case 'ArrowUp':
+        this.indiceSeleccionado -= 2;
+        break;
+      case 'ArrowLeft':
+        this.indiceSeleccionado--;
+        break;
+      case 'ArrowRight':
+        this.indiceSeleccionado++;
+        break;
+    }
+    this.indiceSeleccionado = Math.min(this.luchadores.length-1, this.indiceSeleccionado);
+    this.indiceSeleccionado = Math.max(0, this.indiceSeleccionado);
+  }
+
   indiceSeleccionado: number = -1;
   luchadores: ILuchador[];
 
