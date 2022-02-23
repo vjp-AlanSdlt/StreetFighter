@@ -3,12 +3,11 @@
 @import "../src/css/bootstrap-reboot.min.css";
 @import "../src/css/bootstrap-utilities.min.css";
 
-.imagen {
-  width: 100vw;
-  text-align: center;
-}
-
 body {
   background-image: url("assets/fondo_stage.jpg");
+}
+
+a {
+  cursor: pointer;
 }
 

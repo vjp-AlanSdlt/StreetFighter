@@ -13,7 +13,13 @@ export class AreaSeleccionComponent implements OnInit {
   constructor(private cargaLuchador: CargaLuchadorService, public _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.luchadores = this.cargaLuchador.getLuchadores();
+    this.cargaLuchador.getLuchadores().subscribe(
+      listaLuchadores => {
+        this.luchadores = listaLuchadores;
+      },
+      error => console.log(error),
+      () => console.log("Fin de observable")
+    );
   }
 
   @HostListener('window:keydown', ['$event'])

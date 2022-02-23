@@ -1,2 +1,8 @@
-<app-area-seleccion></app-area-seleccion>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <a class="navbar-brand p-3" [routerLink]="'/bienvenida'" [routerLinkActive]="'active'">Bienvenida</a>
+  <a class="navbar-brand p-3" [routerLink]="'/luchadores'" [routerLinkActive]="'active'">Selección</a>
+</nav>
+<div class="imagen">
+  <img src="assets/letras.png" alt="logo">
+</div>
+<router-outlet></router-outlet>
