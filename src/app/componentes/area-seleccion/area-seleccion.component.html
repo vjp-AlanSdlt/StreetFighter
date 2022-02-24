@@ -35,6 +35,8 @@
           *ngIf="indiceSeleccionado != -1"
           [nombreAtributo]="'Vida'" [valorAtributo]="luchadores[indiceSeleccionado].vida"
         ></app-atributos-luchador>
+
+        <button *ngIf="indiceSeleccionado != -1" class="btn btn-dark col-12 mt-5" [routerLink]="'/antes-luchar/'+luchadores[indiceSeleccionado].id">Seleccionar</button>
       </div>
 
     </div>

@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {DetallesLuchadorGuardaService} from "./servicios/detalles-luchador-guarda.service";
 import {RouterModule} from "@angular/router";
 import { BienvenidaComponent } from './componentes/bienvenida/bienvenida.component';
+import { AntesLucharComponent } from './componentes/antes-luchar/antes-luchar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BienvenidaComponent } from './componentes/bienvenida/bienvenida.compone
     AreaSeleccionComponent,
     LuchadorComponent,
     AtributosLuchadorComponent,
-    BienvenidaComponent
+    BienvenidaComponent,
+    AntesLucharComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import { BienvenidaComponent } from './componentes/bienvenida/bienvenida.compone
       [
         {path: 'bienvenida', component: BienvenidaComponent},
         {path: 'luchadores', component: AreaSeleccionComponent},
+        {path: 'antes-luchar/:id', component: AntesLucharComponent},
         {path: '', redirectTo: 'bienvenida', pathMatch: 'full'},
         {path: '**', redirectTo: '/bienvenida', pathMatch: 'full'}
       ]

@@ -17,7 +17,6 @@ export class LuchadorComponent implements OnInit {
   constructor(private _sanitizer: DomSanitizer) { }
 
   imagePath: SafeResourceUrl;
-  gifPath: SafeResourceUrl;
 
   estilosImgHover: any = {
     'border': '5px solid'

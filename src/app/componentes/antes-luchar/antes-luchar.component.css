@@ -1,0 +1,12 @@
+.contenedor-pelea {
+  background-color: rgba(141, 141, 141, 0.68);
+  padding: 50px;
+}
+
+.img-rotada {
+  transform: scaleX(-1);
+}
+
+img {
+  width: 100%;
+}

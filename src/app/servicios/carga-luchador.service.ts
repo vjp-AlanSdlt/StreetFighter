@@ -15,4 +15,8 @@ export class CargaLuchadorService {
   getLuchadores(): Observable<ILuchador[]> {
     return this.http.get<ILuchador[]>(this.urlLuchadores);
   }
+
+  getLuchador(idLuchador: number): Observable<ILuchador> {
+    return this.http.get<ILuchador>(this.urlLuchadores+"/"+idLuchador);
+  }
 }
