@@ -13,6 +13,7 @@ export class AntesLucharComponent implements OnInit {
 
   idLuchador: number;
   luchador: any;
+  luchador2: any;
   constructor(private route: ActivatedRoute, private cargaLuchador: CargaLuchadorService, public _sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
@@ -25,6 +26,16 @@ export class AntesLucharComponent implements OnInit {
       () => console.log("Fin de observable")
     );
 
+      this.cargaLuchador.getLuchador(this.generarAleatorio()).subscribe(
+        luchador => {
+          this.luchador2 = luchador;
+        },
+        error => console.log(error),
+        () => console.log("Fin de observable")
+      );
   }
 
+  generarAleatorio(): number {
+    return Math.round(Math.random() *(4-1) + 1);
+  }
 }
